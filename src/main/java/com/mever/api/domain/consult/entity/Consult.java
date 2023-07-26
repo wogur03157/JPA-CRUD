@@ -45,8 +45,8 @@ public class Consult {
         consultDto.setCrtDt(consult.getCrtDate());
         return consultDto;
     }
-    @PreUpdate
-    protected void onUpdate() {
-        this.crtDate = LocalDateTime.now();
-    }
+//    @PreUpdate
+//    protected void onUpdate() {
+//        this.crtDate = LocalDateTime.now();
+//    }
 }

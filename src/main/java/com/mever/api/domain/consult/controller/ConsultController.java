@@ -64,8 +64,11 @@ public class ConsultController {
 
     @ApiOperation(value = "상담게시판 삭제", notes = "상담게시판 삭제")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteConsult(@PathVariable Long id, @RequestParam String password) {
+    public ResponseEntity<?> deleteConsult(@PathVariable Long id, @RequestParam(required = false) String password, @RequestParam(required = false) String auth) {
         if (consultService.getConsultById(id).isPresent()) {
+            if("admin".equals(auth)){
+                consultService.deleteConsult(id);
+            }
             if (consultService.chkPassword(id,password)) {
                 consultService.deleteConsult(id);
                 return ResponseEntity.ok().build();

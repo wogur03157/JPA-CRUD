@@ -20,6 +20,7 @@ public class ConsultDto {
     private String content;
     private String userNm;
     private String password;
+    private String auth;
     private LocalDateTime crtDt;
 
     public static Consult toConsultDtoEntity(ConsultDto noticeDto) {
