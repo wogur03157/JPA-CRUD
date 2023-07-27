@@ -63,6 +63,7 @@
         userId:"test@test.com",
         content:"test",
         userNm:"심운보",
+        auth:"admin",
         password:"123",
         title:"test"
       }),
@@ -110,7 +111,8 @@
       //url : "/api/notice/1",
       url : "/api/consult/1",
       data:{
-        password:"1233",
+        auth:"admin",
+        password:"1233"
       },
       success : function (res) {
         console.log(res)

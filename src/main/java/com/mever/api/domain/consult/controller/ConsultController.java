@@ -68,6 +68,7 @@ public class ConsultController {
         if (consultService.getConsultById(id).isPresent()) {
             if("admin".equals(auth)){
                 consultService.deleteConsult(id);
+                return ResponseEntity.ok().build();
             }
             if (consultService.chkPassword(id,password)) {
                 consultService.deleteConsult(id);
